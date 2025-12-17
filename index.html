@@ -129,14 +129,14 @@
                     Excelência e Comprometimento
                 </div>
                 
-                <!-- TÍTULO DINÂMICO -->
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight min-h-[120px] md:min-h-[160px] flex flex-col justify-center">
-                    Assessoria em <br class="hidden md:block"/> 
+                <!-- TÍTULO DINÂMICO (Ajustado para conter a frase completa) -->
+                <!-- Reduzi levemente a fonte (text-2xl/4xl/5xl) para acomodar a frase longa de família -->
+                <h2 class="text-2xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight min-h-[150px] md:min-h-[180px] flex flex-col justify-center items-center">
                     <span id="typewriter" class="text-gold italic border-r-4 border-gold pr-2 animate-pulse"></span>
                 </h2>
                 
                 <p class="text-slate-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto px-2">
-                    Combinamos <strong>EXPERIÊNCIA JURÍDICA</strong> e atendimento humanizado para garantir seus direitos com a máxima agilidade e transparência.
+                    Combinamos <strong>experiência em assessoria</strong> e atendimento humanizado para garantir seus direitos com a máxima agilidade e transparência.
                 </p>
     
                 <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center w-full sm:w-auto">
@@ -385,20 +385,20 @@
             menu.classList.toggle('hidden');
         }
 
-        // Script de Digitação Automática
+        // Script de Digitação Automática (Atualizado com as frases completas)
         const phrases = [
-            "Ações contra o INSS.",
-            "Direito Trabalhista.",
-            "Assuntos de Trânsito.",
-            "Revisão de Aposentadoria.",
-            "Direito de Família."
+            "ASSESSORIA EM Questões Trabalhistas.",
+            "ASSESSORIA EM Questões Cíveis.",
+            "ASSESSORIA EM Revisão de Aposentadoria.",
+            "ASSESSORIA EM Benefícios Assistenciais.",
+            "ASSESSORIA EM Resolução de divórcios, pensão alimentícia, guarda, inventários e contratos cíveis."
         ];
         
         const typeWriterElement = document.getElementById('typewriter');
         let phraseIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        let typeSpeed = 100;
+        let typeSpeed = 80; // Levemente mais rápido para não demorar muito na frase longa
 
         function typeEffect() {
             const currentPhrase = phrases[phraseIndex];
@@ -406,20 +406,20 @@
             if (isDeleting) {
                 typeWriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
                 charIndex--;
-                typeSpeed = 50; 
+                typeSpeed = 30; // Apaga rápido
             } else {
                 typeWriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
                 charIndex++;
-                typeSpeed = 100; 
+                typeSpeed = 80; // Digita em velocidade normal
             }
 
             if (!isDeleting && charIndex === currentPhrase.length) {
                 isDeleting = true;
-                typeSpeed = 2000; 
+                typeSpeed = 2500; // Tempo de leitura (Pausa)
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 500; 
+                typeSpeed = 500; // Pausa antes da próxima
             }
 
             setTimeout(typeEffect, typeSpeed);
